@@ -10,7 +10,17 @@ export default function Navbar(props) {
   console.log(pathname);
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>Logo Brand</div>
+      <div className={styles.logo} onClick={() => setPathname("/")}>
+        <Link
+          style={{
+            outline: "none",
+            color: "#FFFFFF",
+            textDecoration: "none",
+          }}
+          to='/'>
+          Logo Brand
+        </Link>
+      </div>
       <div className={styles.menus}>
         <div
           onClick={() => setPathname("/addevent")}
