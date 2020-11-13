@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./dashboard.module.css";
 import { Table } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import Pagination from "../../components/Dashboard/Pagination";
+import { getEventCreator } from "../../redux/actions/event";
+
 export default function Dashboard() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getEventCreator("", 1));
+  }, [dispatch]);
+  const { event } = useSelector((state) => state.event);
+
+  const handelSearch = (e) => {
+    let key = e.target.value;
+    if (e.key === "Enter") {
+      dispatch(getEventCreator(key, 1));
+    }
+  };
   return (
     <>
       <div className={styles.container}>
         <div className={styles.containertable}>
           <div className={styles.line}>
-            <input className={styles.input} placeholder='Search' />
+            <input
+              className={styles.input}
+              placeholder='Search'
+              onKeyPress={(e) => handelSearch(e)}
+            />
           </div>
 
           <div className={styles.contenttable}>
@@ -24,22 +43,18 @@ export default function Dashboard() {
                 </tr>
               </thead>
               <tbody>
-                <tr className={styles.rowbody}>
-                  <td>1</td>
-                  <td>Acara maulidan</td>
-                  <td>Cirebon</td>
-                  <td>12 Desember</td>
-                  <td>siapa ya</td>
-                  <td>Blabalaa baakn avjajj</td>
-                </tr>
-                <tr className={styles.rowbody}>
-                  <td>1</td>
-                  <td>Acara maulidan</td>
-                  <td>Cirebon</td>
-                  <td>12 Desember</td>
-                  <td>siapa ya</td>
-                  <td>Blabalaa baakn avjajj</td>
-                </tr>
+                {event.map((item, index) => {
+                  return (
+                    <tr className={styles.rowbody}>
+                      <td>{index + 1} </td>
+                      <td>{item.title}</td>
+                      <td>{item.location}</td>
+                      <td>{item.date}</td>
+                      <td>{item.participant}</td>
+                      <td>{item.note}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </Table>
           </div>

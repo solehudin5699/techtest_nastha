@@ -12,3 +12,9 @@ export const addEventCreator = createAsyncAction("ADD_EVENT", async (body) => {
   const res = await addEvent(body);
   return res.data;
 });
+
+export const resetStatusCreator = () => {
+  return {
+    type: "RESET_STATUS",
+  };
+};

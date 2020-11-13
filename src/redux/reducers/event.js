@@ -37,7 +37,7 @@ const eventReducer = (prevState = initialState, action) => {
       }
       return {
         ...prevState,
-        products: data,
+        event: data,
         statusGet: status,
         error: err,
         isPending: false,
@@ -85,7 +85,11 @@ const eventReducer = (prevState = initialState, action) => {
         isddPending: false,
         isAddFulFilled: false,
       };
-
+    case "RESET_STATUS":
+      return {
+        ...prevState,
+        statusAdd: null,
+      };
     default:
       return prevState;
   }
