@@ -10,7 +10,7 @@ Developer PT Nastha Global Utama.
     <img width="100%" src="./src/assets/image/capture2.PNG">
 </div>
 
-## Related Repositor
+## Related Repository
 
 RESTful API for this repository
 
