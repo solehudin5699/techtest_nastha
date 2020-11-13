@@ -70,12 +70,12 @@ export default function AddEvent() {
         image: "",
       });
       setTimeout(() => {
-        dispatch(resetStatusCreator);
+        dispatch(resetStatusCreator());
       }, 3000);
     } else if (statusAdd === 500) {
       notifyError();
       setTimeout(() => {
-        dispatch(resetStatusCreator);
+        dispatch(resetStatusCreator());
       }, 3000);
     }
   }, [statusAdd]);
