@@ -1,0 +1,14 @@
+.container {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  border: none;
+  height: 50px;
+}
+.btn {
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
