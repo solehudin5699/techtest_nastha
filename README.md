@@ -9,3 +9,11 @@ Developer PT Nastha Global Utama.
     <img width="100%" src="./src/assets/image/capture1.png">
     <img width="100%" src="./src/assets/image/capture12.png">
 </div>
+
+## Related Repositor
+
+RESTful API for this repository
+
+- [`Backend`](https://github.com/solehudin5699/techtest_nastha_be.git)
+
+<
