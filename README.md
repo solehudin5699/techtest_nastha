@@ -7,7 +7,7 @@ Developer PT Nastha Global Utama.
 
 <div align="center">
     <img width="100%" src="./src/assets/image/capture1.PNG">
-    <img width="100%" src="./src/assets/image/capture12.PNG">
+    <img width="100%" src="./src/assets/image/capture2.PNG">
 </div>
 
 ## Related Repositor
