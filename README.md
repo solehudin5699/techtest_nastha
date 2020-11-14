@@ -13,9 +13,9 @@ Developer PT Nastha Global Utama.
 ## Recording
 
 <div align="center">
-  <video width="100%"  controls>
-    <source src="./src/assets/image/recording.mp4" type="video/mp4">
-  </video>
+   <iframe width="100%" 
+src="https://drive.google.com/file/d/1DcyEkol5mMGU_8xUrOZjagq86AH1AFdM/view?usp=sharing">
+</iframe> 
 </div>
 
 ## Related Repository
