@@ -109,6 +109,7 @@ export default function AddEvent() {
                   onChange={(e) =>
                     setEvent({ ...event, title: e.target.value })
                   }
+                  value={event.title}
                 />
                 <input
                   placeholder='Location'
@@ -117,6 +118,7 @@ export default function AddEvent() {
                   onChange={(e) =>
                     setEvent({ ...event, location: e.target.value })
                   }
+                  value={event.location}
                 />
               </div>
 
@@ -128,6 +130,7 @@ export default function AddEvent() {
                   onChange={(e) =>
                     setEvent({ ...event, participant: e.target.value })
                   }
+                  value={event.participant}
                 />
                 <input
                   placeholder='Date'
@@ -135,6 +138,7 @@ export default function AddEvent() {
                   className={styles.input}
                   required
                   onChange={(e) => setEvent({ ...event, date: e.target.value })}
+                  value={event.date}
                 />
               </div>
 
@@ -145,6 +149,7 @@ export default function AddEvent() {
                   required
                   maxLength={50}
                   onChange={(e) => setEvent({ ...event, note: e.target.value })}
+                  value={event.note}
                 />
               </div>
 

@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Table, Pagination } from "react-bootstrap";
 import styles from "./pagination.module.css";
+import { getEventCreator } from "../../redux/actions/event";
+
 export default function Dashboard() {
-  let active = 2;
+  const dispatch = useDispatch();
+  const [active, setActive] = useState(1);
+  // let active = 2;
   let items = [];
   for (let number = 1; number <= 5; number++) {
     items.push(
       <Pagination.Item
+        onClick={() => {
+          setActive(number);
+          dispatch(getEventCreator("", number));
+        }}
         style={{
           border: "none",
           borderCollapse: "collapse",
