@@ -4,6 +4,7 @@ import styles from "./addevent.module.css";
 import "./addevent.module.css";
 import { addEventCreator, resetStatusCreator } from "../../redux/actions/event";
 import { ToastContainer, toast } from "react-toastify";
+import { Redirect, Switch } from "react-router-dom";
 
 const notifyError = () =>
   toast.error("Failed add event", {
@@ -39,6 +40,7 @@ export default function AddEvent() {
   });
   const inputRef = React.useRef();
   const handleChangeFile = (e) => {
+    e.preventDefault();
     let files = e.target.files[0];
     setEvent({
       ...event,
@@ -92,7 +94,12 @@ export default function AddEvent() {
         draggable
         pauseOnHover
       />
-      <form>
+      {statusAdd === 200 ? (
+        <Switch>
+          <Redirect from='/addevent' to='/' exact />
+        </Switch>
+      ) : null}
+      <form onSubmit={(e) => handleSubmit(e)}>
         <div className={styles.container}>
           <div className={styles.containerform}>
             <div className={styles.formbox}>
@@ -162,20 +169,20 @@ export default function AddEvent() {
                   required
                   onChange={(e) => handleChangeFile(e)}
                 />
-                <button
-                  className={styles.btnadd}
+                <div
+                  className={event.image ? styles.btnaddFull : styles.btnadd}
                   onClick={() => {
                     inputRef.current.click();
                   }}>
                   Upload Picture
-                </button>
+                </div>
               </div>
 
               <div className={styles.linebtn}>
                 <button
+                  type='submit'
                   style={{ outline: "none" }}
-                  className={styles.btn}
-                  onClick={(e) => handleSubmit(e)}>
+                  className={styles.btn}>
                   {isAddPending ? (
                     <i className='fa fa-spinner fa-spin fa-2x fa-fw'></i>
                   ) : (

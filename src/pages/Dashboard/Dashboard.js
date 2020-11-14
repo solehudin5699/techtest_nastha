@@ -8,7 +8,7 @@ import { getEventCreator } from "../../redux/actions/event";
 export default function Dashboard() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getEventCreator("", 1));
+    dispatch(getEventCreator("", 5, 1));
   }, [dispatch]);
   const { event } = useSelector((state) => state.event);
 

@@ -8,8 +8,8 @@ export const addEvent = (body) => {
   });
 };
 
-export const getEvent = (title, page) => {
+export const getEvent = (title, limit, page) => {
   return axios.get(
-    `http://localhost:1000/event/search?title=${title}&orderBy=DESC&limit=5&page=${page}`
+    `http://localhost:1000/event/search?title=${title}&orderBy=DESC&limit=${limit}&page=${page}`
   );
 };

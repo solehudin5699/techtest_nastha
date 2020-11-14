@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./navbar.module.css";
+import eventLogo from "../../assets/image/event.png";
 import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
@@ -18,7 +19,8 @@ export default function Navbar(props) {
             textDecoration: "none",
           }}
           to='/'>
-          Logo Brand
+          <img src={eventLogo} alt='' className={styles.eventLogo} />
+          <span className={styles.labelLogo}>Event Manager</span>
         </Link>
       </div>
       <div className={styles.menus}>

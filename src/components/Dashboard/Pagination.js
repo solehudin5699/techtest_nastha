@@ -14,7 +14,7 @@ export default function Dashboard() {
       <Pagination.Item
         onClick={() => {
           setActive(number);
-          dispatch(getEventCreator("", number));
+          dispatch(getEventCreator("", 5, number));
         }}
         style={{
           border: "none",

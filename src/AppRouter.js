@@ -8,7 +8,12 @@ import Home from "./pages/Home/Home";
 function AppRouter() {
   return (
     <Router>
-      <div style={{ backgroundColor: "rgba(218, 201, 245, 0.884)" }}>
+      <div
+        style={{
+          backgroundColor: "rgba(218, 201, 245, 0.884)",
+          height: "100vh",
+          overflowY: "scroll",
+        }}>
         <Navbar />
         <Route exact path='/' component={Home} />
         <Route exact path='/addevent' component={AddEvent} />

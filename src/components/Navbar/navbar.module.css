@@ -7,12 +7,21 @@
   justify-content: space-between;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 .logo {
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.eventLogo {
+  width: 3vw;
+}
+.labelLogo {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 900;
 }
 .menus {
   width: 30%;
@@ -45,7 +54,13 @@
   .container {
     height: 10vw;
   }
+  .eventLogo {
+    width: 7vw;
+  }
   .menus {
     width: 50%;
+  }
+  .labelLogo {
+    display: none;
   }
 }
